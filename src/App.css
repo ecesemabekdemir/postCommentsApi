@@ -1,0 +1,319 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #f6f4e6;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #181818;
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+
+.header {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-inline: 15%;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+
+.nav {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.nav li {
+  list-style: none;
+}
+
+.nav a {
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  margin: 20px 0;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.nav a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid #47897b;
+  border-bottom: 2px solid #47897b;
+  transform: scaleY(2);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.nav a:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #47897b;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+.nav a:hover::before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.nav a:hover:after {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.postContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.postList {
+  width: 40%;
+  background-color: #272727;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.post-item {
+  background-color: #333;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.post-item:hover {
+  background-color: #444;
+}
+
+.post-item h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.post-item p {
+  font-size: 16px;
+}
+
+button {
+  background-color: #47897b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.selectedPost {
+  width: 55%;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.selectedPost h1 {
+  font-size: 24px;
+  color: #fff;
+}
+
+.selectedPost p {
+  font-size: 18px;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+strong {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+  color: #999;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.comment {
+  margin-top: 20px;
+}
+
+.comment p {
+  font-size: 16px;
+  color: #f6f4e6;
+}
+
+.comment span {
+  font-size: 14px;
+  color: #999;
+  margin-top: 5px;
+  display: block;
+}
+
+hr {
+  border-color: #444;
+  margin: 10px 0;
+}
+
+.commentItem {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #1c5145;
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px 150px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+ul li {
+  list-style: none;
+}
+
+.socialLink,
+.quickLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.socialLink a,
+.quickLinks a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.socialLink a:hover,
+.quickLinks a:hover {
+  color: #47897b;
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------ Tablet */
+@media (min-width: 768px) {
+  .nav {
+    max-width: 50%;
+  }
+}
+
+/* -----------------------------------------------------------------------------------------------Mobil  */
+@media (min-width: 375px) {
+  .nav {
+    max-width: 50%;
+  }
+}
