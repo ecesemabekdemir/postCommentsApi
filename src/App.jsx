@@ -93,12 +93,8 @@ function Main() {
 
 function Content() {
   const { route } = useContext(RouterContext);
-  return (
-    <div className="content">
-      <h1>{route.name}</h1>
-      {route.element}
-    </div>
-  );
+
+  return <div className="content">{route.element}</div>;
 }
 
 function PostPage() {
@@ -209,25 +205,27 @@ function PostDetail({
   setNewComment,
 }) {
   return (
-    <div>
-      <h1>{selectedPost.title}</h1>
-      <strong>{new Date(selectedPost.updatedAt).toLocaleString("tr")}</strong>
-      <p>{selectedPost.content}</p>
+    <div className="commentContainer">
+      <div className="commentHeader">
+        <h1>{selectedPost.title}</h1>
+        <strong>{new Date(selectedPost.updatedAt).toLocaleString("tr")}</strong>
+      </div>
+      <div className="body">
+        <p>{selectedPost.content}</p>
+      </div>
       <div className="comments">
-        <h2>Yorumlar</h2>
         {comments.length === 0 ? (
           <p>Henüz yorum yok.</p>
         ) : (
           comments.map((comment) => (
             <div className="commentItem" key={comment.id}>
               <p>{comment.content}</p>
-              <span>Beğeni: {comment.likes}</span>
+              <span>beğeni {comment.likes}</span>
             </div>
           ))
         )}
       </div>
       <form onSubmit={handleSubmit}>
-        <h3>Yeni Yorum Ekle</h3>
         <textarea
           placeholder="Yorumunuz"
           value={newComment}
@@ -244,7 +242,6 @@ function PostDetail({
 function PostList({ posts, handlePostClick }) {
   return (
     <div className="postList">
-      <h1>Post Listesi</h1>
       {posts.length === 0 ? (
         <div>Yükleniyor...</div>
       ) : (

@@ -141,7 +141,7 @@ h6 {
 }
 
 .postList {
-  width: 40%;
+  margin: 0 auto;
   background-color: #272727;
   padding: 20px;
   border-radius: 10px;
@@ -226,19 +226,34 @@ textarea {
 }
 
 textarea {
-  min-height: 100px;
+  width: 500px;
+  height: 100px;
 }
 
 button[type="submit"] {
+  width: 500px;
   background-color: #28a745;
+  margin-bottom: 10px;
 }
 
 button[type="submit"]:hover {
   background-color: #218838;
 }
 
+.commentContainer {
+  margin: 0 auto;
+  background-color: #272727;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.commentHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
 .comment {
-  margin-top: 20px;
+  margin: 120px;
 }
 
 .comment p {
@@ -259,9 +274,16 @@ hr {
 }
 
 .commentItem {
+  width: 500px;
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+.body {
+  width: 800px;
+  margin-bottom: 50px;
 }
 
 .footer {
